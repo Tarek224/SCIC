@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = @ViewData["Title"];
+}
+
+<div style="font-size:18px; margin-right:1.15rem; padding-right:0.45rem; padding-left:1.45rem;">
+    <h2></h2>
+    <ul class="nav nav-tabs">
+        <li>
+            <a asp-action="MainPage" asp-controller="SCIC" class="nav-link" aria-selected="true"> @localizer["Main Page"] </a>
+        </li>
+        
+        <li>
+            <a asp-action="AboutSKinCare" asp-controller="SCIC" class="nav-link"> @localizer["About Skin Cancer"] </a>
+        </li>
+
+        <li>
+            <a asp-action="Contact" asp-controller="Home" class="nav-link active" aria-selected="true"> @localizer["Contact Us"] </a>
+        </li>
+
+    </ul>
+    <br />
+</div>
+<br />
+
+<!-- Title page -->
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('/images/doctor-checking-patient-side-view.jpg');">
+    <h2 class="ltext-105 cl0 txt-center nav-link active">
+        @localizer["Contact Us"]
+    </h2>
+</section>
+
+<!-- Content page -->
+<section class="bg0 p-t-104 p-b-116">
+    <div class="container">
+        <div class="flex-w flex-t bor12 p-b-13">
+            <div class=" flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
+                <div class="flex-w w-full p-b-42">
+                    <span class="fs-18 cl5 txt-center size-211">
+                        <span class="lnr lnr-map-marker"></span>
+                    </span>
+                    <div class="size-212 p-t-2">
+                        <span class="mtext-110 cl2">
+                            @localizer["Management"]
+                        </span>
+
+                        <p class="stext-115 cl6 size-200 p-t-18">
+                            @localizer["Department of Public Relations - Ministry of Communications and Information Technology"]
+                        </p>
+                    </div>
+                </div>
+                <div class="flex-w w-full p-b-42">
+                    <span class="fs-18 cl5 txt-center size-211">
+                        <span class="lnr lnr-phone-handset"></span>
+                    </span>
+
+                    <div class="size-212 p-t-2">
+                        <span class="mtext-110 cl2">
+                            @localizer["Lets Talk"]
+                        </span>
+
+                        <p class="stext-115 cl1 size-213 p-t-18">
+                            1731 - 1018
+                        </p>
+                    </div>
+                </div>
+                <div class="flex-w w-full">
+                    <span class="fs-18 cl5 txt-center size-211">
+                        <span class="lnr lnr-envelope"></span>
+                    </span>
+
+                    <div class="size-212 p-t-2">
+                        <span class="mtext-110 cl2">
+                            @localizer["Email Address"]
+                        </span>
+                        <p class="stext-115 cl1 size-200 p-t-18">
+                            TarekMa7mod@mcit.gov.eg  -  RaniaA7med@gmail.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

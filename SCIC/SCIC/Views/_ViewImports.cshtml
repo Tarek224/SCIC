@@ -1,0 +1,9 @@
+﻿@using SCIC
+@using SCIC.Models
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.Extensions.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject UserManager<ApplicationUser> userManager
+@inject SignInManager<ApplicationUser> signInManager
+@inject IStringLocalizer<SharedResource> localizer
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

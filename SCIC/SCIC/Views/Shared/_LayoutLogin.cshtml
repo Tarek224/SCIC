@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.Localization
+@{
+    var culture = Context.Features.Get<IRequestCultureFeature>();
+    var dir = culture.RequestCulture.UICulture.TextInfo.IsRightToLeft ? "rtl" : "ltr";
+    var twoLetter = culture.RequestCulture.UICulture.TwoLetterISOLanguageName;
+}
+
+<!DOCTYPE html>
+<html lang="@twoLetter" dir="@dir">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="~/images/icons/favicon.png" />
+    <!--===============================================================================================-->
+    <title> @ViewData["Title"] </title>
+    <!--===============================================================================================-->
+    <link href="~/adminDashboard/css/bootstrap.min.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link href="~/adminDashboard/css/bootstrap-theme.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link href="~/adminDashboard/css/elegant-icons-style.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/adminDashboard/css/font-awesome.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/fonts/fontawesome-free-6.0.0-web/css/fontawesome.css" rel="stylesheet">
+    <link href="~/fonts/fontawesome-free-6.0.0-web/css/brands.css" rel="stylesheet">
+    <link href="~/fonts/fontawesome-free-6.0.0-web/css/solid.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link href="~/adminDashboard/css/style.css" rel="stylesheet">
+    <link href="~/adminDashboard/css/style-responsive.css" rel="stylesheet" />
+    <link href="~/css/login.css" rel="stylesheet" />
+    <link href="~/css/css.css" rel="stylesheet" />
+    <link href="~/css/styles.css" rel="stylesheet" />
+</head>
+<body class="">
+    
+    @RenderBody()
+
+</body>
+</html>

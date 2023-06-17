@@ -1,0 +1,100 @@
+﻿@model SCIC.ViewModel.LoginViewModel
+@using Microsoft.AspNetCore.Localization;
+@{
+    ViewData["Title"] = @ViewData["Title"];
+}
+@{
+    var culture = Context.Features.Get<IRequestCultureFeature>();
+    var dir = culture.RequestCulture.UICulture.TextInfo.IsRightToLeft ? "rtl" : "ltr";
+    var twoLetter = culture.RequestCulture.UICulture.TwoLetterISOLanguageName;
+}
+
+<div style="font-size:18px; margin-right:1.15rem; padding-right:0.45rem; padding-left:1.45rem;">
+    <h2></h2>
+    <ul class="nav nav-tabs">
+        <li>
+            <a asp-action="MainPage" asp-controller="SCIC" class="nav-link active" aria-selected="true"> @localizer["Main Page"] </a>
+        </li>
+
+        <li>
+            <a asp-action="AboutSKinCare" asp-controller="SCIC" class="nav-link"> @localizer["About Skin Cancer"] </a>
+        </li>
+
+        <li>
+            <a asp-action="Contact" asp-controller="Home" class="nav-link" aria-selected="true"> @localizer["Contact Us"] </a>
+        </li>
+    </ul>
+    <br />
+</div>
+<br />
+
+@*<h4 class="ltext-106 txt-center">
+    @localizer["What is your risk of developing skin cancer?"]
+</h4>
+<br />
+
+
+<div class="tab-content tab-pane fade show active row col-md-12">
+    <div class="tab-content dataTable-container responsive">
+        <div class="dataTable-container responsive" style="overflow-x:auto; margin-top: 10px;">
+            <table style="overflow-x:scroll; width:1200px;" id="pageTable" class="dataTable-table responsive">
+                <thead>
+                    <tr>
+                        <th scope="col"> @localizer["Maintenance Date"] </th>
+                        <th scope="col"> @localizer["Type Of Maintenance"] </th>
+                        <th scope="col"> @localizer["Spare Parts Requirements"] </th>
+                        <th scope="col"> @localizer["Device Image"] </th>
+                        <th scope="col"> @localizer["Notes"] </th>
+                        <th scope="col"> @localizer["Operations"]</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <form asp-controller="MDevice" method="get">
+                    <tr>
+                        <td scope="row">  </td>
+                        <td scope="row">
+                            <div class="form-check m-l-25">
+                                <input class="form-check-input" type="checkbox" name="MaintenanceTypes" value="RegularMaintenance" checked>
+                                <label class="form-check-label"> @localizer["Regular Maintenance"] </label>
+                            </div>
+                        </td>
+                        <td scope="row">  </td>
+                        <td scope="row" style="text-align: center">  </td>
+                        <td scope="row">  </td>
+                        <td scope="row" style="text-align: center">
+                            <a asp-action="EditMaintenance" class="btn btn-success"> @localizer["Edit"] </a> |
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"> @localizer["Delete"] </button>
+                            <!-- Modal -->
+                            <div class="modal fade" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="ModalLabel">@localizer["Delete The Maintenance ?"]</h1>
+                                        </div>
+                                        <div class="modal-body">
+                                                @localizer["To Confirm, Click Delete..."]
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a asp-action="DeleteMaintenance" class="btn btn-success"> @localizer["Delete"] </a>
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> @localizer["Cancel"] </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </form>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/datatable_file.js"></script>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}*@

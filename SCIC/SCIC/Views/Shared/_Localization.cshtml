@@ -1,0 +1,23 @@
+﻿@inject Microsoft.Extensions.Options.IOptions<RequestLocalizationOptions> locOptions;
+@{
+    var culture = Context.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>();
+    var cultureList = locOptions.Value.SupportedUICultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.NativeName }).ToList();
+    var returnUrl = string.IsNullOrWhiteSpace(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}{Context.Request.QueryString}";
+}
+
+<ul class="navbar-nav">
+    <li class="nav-item dropdown text-white-50">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropDownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-globe-africa"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropDownMenuLink">
+            <form method="post" asp-action="SetLanguage" asp-controller="Home" asp-route-returnUrl="@returnUrl">
+                @foreach (var item in cultureList)
+                {
+                    <input name="culture" type="submit" class="dropdown-item" value="@item.Text" />
+                }
+            </form>
+        </div>
+    </li>
+</ul>

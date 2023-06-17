@@ -1,0 +1,295 @@
+﻿@using Microsoft.AspNetCore.Localization
+@{
+    var culture = Context.Features.Get<IRequestCultureFeature>();
+    var dir = culture.RequestCulture.UICulture.TextInfo.IsRightToLeft ? "rtl" : "ltr";
+    var twoLetter = culture.RequestCulture.UICulture.TwoLetterISOLanguageName;
+}
+
+<!DOCTYPE html>
+<html lang="@twoLetter" dir="@dir">
+<head>
+    <title> @ViewData["Title"] </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="~/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/fonts/linearicons-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/slick/slick.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/MagnificPopup/magnific-popup.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link href="~/fonts/fontawesome-free-6.0.0-web/css/fontawesome.css" rel="stylesheet">
+    <link href="~/fonts/fontawesome-free-6.0.0-web/css/brands.css" rel="stylesheet">
+    <link href="~/fonts/fontawesome-free-6.0.0-web/css/solid.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link href="~/css/site.css" rel="stylesheet" type="text/css">
+    <link href="~/css/util.css" rel="stylesheet" type="text/css">
+    <link href="~/css/main.css" rel="stylesheet" type="text/css">
+    <link href="~/css/PagedList.css" rel="stylesheet" />
+    <link href="~/css/styles.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <script src="~/js/devextreme/jquery.js"></script>
+    <script src="~/js/devextreme/dx.all.js"></script>
+    <script src="~/js/feather.min.js"></script>
+    <script src="~/js/all.min.js"></script>
+    <!--===============================================================================================-->
+    @if (dir == "rtl")
+    {
+        <link href="~/css/styles-rtl.css" rel="stylesheet" />
+        <link href="~/css/util-rtl.css" rel="stylesheet" type="text/css">
+    }
+</head>
+<body class="layout-rtl animsition nav-fixed" dir="@dir">
+    <nav class="topnav navbar navbar-expand shadow justify-content-between navbar-light bg-white " id="sidenavAccordion">
+        <button class="btn btn-icon btn-transparent-dark me-2 ms-lg-2 me-lg-0" id="sidebarToggle"> <i data-feather="menu"></i> </button>
+        <img src="~/images/Dry-Skin.png" width="120" height="80" class="d-inline-block align-top" alt="Bootstrap" loading="lazy">
+
+        <div dir="ltr">
+            <partial name="_Localization" />
+        </div>
+
+        <i class="right nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
+            <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img alt="text" class="img-fluid" src="~/assets/img/illustrations/profiles/profile-2.png">
+            </a>
+            <i class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
+                <i class="dropdown-header d-flex align-items-center">
+                    <img alt="text" class="dropdown-user-img" src="~/assets/img/illustrations/profiles/profile-2.png">
+                </i>
+                <i class="dropdown-divider">
+                    @if (signInManager.IsSignedIn(User))
+                    {
+                        <i class="dropdown-user-details">
+                            <i class="dropdown-item">
+                                <a class="flex-c-m trans-04 p-lr-25"> @User.Identity.Name </a>
+                            </i>
+                            <i class="dropdown-item">
+                                <a asp-action="Logout" asp-controller="Account" class="flex-c-m trans-04 p-lr-25">@localizer["Logout"]</a>
+                            </i>
+                        </i>
+                    }
+                    else
+                    {
+                        <i> <a asp-action="Login" asp-controller="Account" class="dropdown-item flex-c-m trans-04 p-lr-25">@localizer["Login"]</a></i>
+                        <i> <a asp-action="Register" asp-controller="Account" class="dropdown-item flex-c-m trans-04 p-lr-25">@localizer["Register"]</a></i>
+                    }
+                </i>
+            </i>
+        </i>
+        <img src="~/images/rash.png" width="120" height="80" class="d-inline-block align-top" alt="Bootstrap" loading="lazy">
+    </nav>
+
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sidenav shadow-left sidenav-light">
+                <div class="sidenav-menu">
+                    <div class="nav accordion" id="accordionSidenav">
+                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-controls="collapseDashboards"></a>
+                        <ul>
+                            <li>
+                                <a class="nav-link" asp-action="MainPage" asp-controller="SCIC">
+                                    <i style="margin-right:5px;margin-left:5px;font-size:20px" class="fas fa-home"></i> @localizer["Main Page"]
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="nav-link" asp-action="Contact" asp-controller="Home">
+                                    <i style="margin-right:5px;margin-left:5px;font-size:20px" class="fas fa-info-circle"></i>@localizer["About Skin Cancer"]
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="nav-link" asp-action="Contact" asp-controller="Home">
+                                    <i style="margin-right:5px;margin-left:5px;font-size:20px" class="fas fa-address-card"></i>@localizer["Contact Us"]
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div id="layoutSidenav_content">
+            <main>
+                <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+                    <div class="container-xl px-4">
+                        <div class="page-header-content pt-4">
+                            <div class="row align-items-center justify-content-between">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="   me0">
+                                        <h1 class="page-header-title">
+                                            <i class="page-header-icon"><i data-feather="activity"></i></i>
+                                            @localizer["Skin Cancer Intelligent Classification App"]
+                                        </h1>
+                                        <div class="page-header-subtitle"> <i class='fas fa-briefcase-medical' style="margin-right:5px;margin-left:5px;font-size:20px;color:white"></i> @localizer["SCIC"] </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Main page content-->
+                <div class="container-xl px-4 mt-n10">
+                    <div class="card mb-4">
+                        <div class="card-header"> <i class="fas fa-clinic-medical" style="margin-right:5px;margin-left:5px;font-size:20px"></i> @localizer["Skin Doctor"] </div>
+
+                        <div class="card-body">
+
+                            @RenderBody()
+
+                        </div>
+                    </div>
+
+                    <div class="heights"> </div>
+                    <div dir="rtl" class="card  ">
+                        <div class="card-body">
+                            <div class="row">
+                                @if (dir == "rtl")
+                                {
+                                    <footer style="color: #333!important;">
+                                        <div style="color: #333!important;" class="text-white p-3">
+                                            <div class="copyright-right nav-link active">
+                                                <span> @localizer["Skin Cancer Intelligent Classification App - All Rights Reserved © - FCI Asyut-BIO 2023"] </span>
+                                            </div>
+                                        </div>
+                                    </footer>
+                                }
+                                else
+                                {
+                                    <footer style="color: #333!important;" class="mt-auto footer-light">
+                                        <div style="color: #333!important;" class="text-white p-3">
+                                            <div class="copyright-right nav-link active">
+                                                <span> @localizer["Skin Cancer Intelligent Classification App - All Rights Reserved © - FCI Asyut-BIO 2023"] </span>
+                                            </div>
+                                        </div>
+                                    </footer>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="btn-back-to-top" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+            <i class="zmdi zmdi-chevron-up"></i>
+        </span>
+    </div>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/scripts.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/select2/select2.min.js"></script>
+    <script>
+        $(".js-select2").each(function () {
+            $(this).select2({
+                minimumResultsForSearch: 20,
+                dropdownParent: $(this).next('.dropDownSelect2')
+            });
+        })
+    </script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/daterangepicker/moment.min.js"></script>
+    <script src="~/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/slick/slick.min.js"></script>
+    <script src="~/js/slick-custom.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/parallax100/parallax100.js"></script>
+    <script>
+        $('.parallax100').parallax100();
+    </script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+    <script>
+        $('.gallery-lb').each(function () { // the containers for all your galleries
+            $(this).magnificPopup({
+                delegate: 'a', // the selector for gallery item
+                type: 'image',
+                gallery: {
+                    enabled: true
+                },
+                mainClass: 'mfp-fade'
+            });
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/isotope/isotope.pkgd.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/sweetalert/sweetalert.min.js"></script>
+    <script>
+        $('.js-addwish-b2').each(function () {
+            var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+            $(this).on('click', function () {
+                swal(nameProduct, "is added to wishlist !", "success");
+
+                $(this).addClass('js-addedwish-b2');
+            });
+        });
+        $('.js-addwish-detail').each(function () {
+            var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+            $(this).on('click', function () {
+                swal(nameProduct, "is added to wishlist !", "success");
+
+                $(this).addClass('js-addedwish-detail');
+            });
+        });
+        /*---------------------------------------------*/
+        $('.js-addcart-detail').each(function () {
+            var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+            $(this).on('click', function () {
+                swal(nameProduct, "is added to cart !", "success");
+            });
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script>
+        $('.js-pscroll').each(function () {
+            $(this).css('position', 'relative');
+            $(this).css('overflow', 'hidden');
+            var ps = new PerfectScrollbar(this, {
+                wheelSpeed: 1,
+                scrollingThreshold: 1000,
+                wheelPropagation: false,
+            });
+
+            $(window).on('resize', function () {
+                ps.update();
+            })
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="~/js/main.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

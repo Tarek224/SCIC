@@ -1,0 +1,136 @@
+﻿@model SCIC.ViewModel.RegisterViewModel
+@{
+    ViewData["Title"] = @ViewData["Title"];
+    Layout = "_LayoutLogin";
+}
+
+<section class="vh-100" style="background-color: #eee;">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style="color:#00c2f3;font-size:2rem">  @localizer["Sign up To Skin Doctor"] </p>
+                                <form asp-action="Register" asp-controller="Account" class="mx-1 mx-md-4" method="post">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label asp-for="Name" class="form-label"> @localizer["Full Name"] </label>
+                                            <input asp-for="Name" class="form-control" pattern="^[a-zA-Z0-9ء-ي' '-,!'\s]{1,100}$" title="@localizer["Invalid Characters.!!"]" autofocus required style="font-size:1.5rem" />
+                                            <span asp-validation-for="Name" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label asp-for="Email" class="form-label"> @localizer["Email Address"] </label>
+                                            <input asp-for="Email" class="form-control" required style="font-size:1.5rem" />
+                                            <span asp-validation-for="Email" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label asp-for="DateOfBirth" class="form-label"> @localizer["Date Of Birth"] </label>
+                                            <input asp-for="DateOfBirth" class="form-control" required style="font-size:1.5rem" />
+                                            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <label asp-for="@Model.Gender" class="form-label"> @localizer["Gender"] </label>
+                                    <div class="form-check d-flex justify-content-center col-md-12">
+                                        <div class="form-check m-l-25  col-md-6">
+                                            @if (Model.Gender == Gender.Male)
+                                            {
+                                                <input class="form-check-input me-2" type="radio" name="Gender" value="@Gender.Male" id="Male" checked>
+                                            }
+                                            else
+                                            {
+                                                <input class="form-check-input me-2" type="radio" name="Gender" value="@Gender.Male" id="Male">
+                                            }
+                                            <label class="form-check-label" for="Male" style="font-size:1.5rem"> @localizer["Male"] </label>
+                                        </div>
+
+                                        <div class="form-check m-l-25 col-md-6">
+                                            @if (Model.Gender == Gender.Female)
+                                            {
+                                                <input class="form-check-input me-2" type="radio" name="Gender" value="@Gender.Female" id="Female" checked>
+                                            }
+                                            else
+                                            {
+                                                <input class="form-check-input me-2" type="radio" name="Gender" value="@Gender.Female" id="Female">
+                                            }
+                                            <label class="form-check-label" for="Female" style="font-size:1.5rem"> @localizer["Female"] </label>
+                                        </div>
+                                    </div>
+
+                                    <label asp-for="@Model.UserType" class="form-label"> @localizer["User Type"] </label>
+                                    <div class="form-check d-flex justify-content-center col-md-12">
+                                        <div class="form-check m-l-25  col-md-6">
+                                            @if (Model.UserType == UserType.Doctor)
+                                            {
+                                                <input class="form-check-input me-2" type="radio" name="UserType" value="@UserType.Doctor" id="Doctor" checked>
+                                            }
+                                            else
+                                            {
+                                                <input class="form-check-input me-2" type="radio" name="UserType" value="@UserType.Doctor" id="Doctor">
+                                            }
+                                            <label class="form-check-label" for="Doctor" style="font-size:1.5rem"> @localizer["Doctor"] </label>
+                                        </div>
+
+                                        <div class="form-check m-l-25 col-md-6">
+                                            @if (Model.UserType == UserType.Patient)
+                                            {
+                                                <input class="form-check-input me-2" type="radio" name="UserType" value="@UserType.Patient" id="Patient" checked>
+                                            }
+                                            else
+                                            {
+                                                <input class="form-check-input me-2" type="radio" name="UserType" value="@UserType.Patient" id="Patient">
+                                            }
+                                            <label class="form-check-label" for="Patient" style="font-size:1.5rem"> @localizer["Patient"] </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label asp-for="Password" class="form-label"> @localizer["Password"]</label>
+                                            <input asp-for="Password" type="password" class="form-control" required style="font-size:1.5rem" />
+                                            <span asp-validation-for="Password" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label asp-for="ConfirmPassword" class="form-label"> @localizer["Confirm Password"]</label>
+                                            <input asp-for="ConfirmPassword" type="password" class="form-control" required style="font-size:1.5rem" />
+                                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center mb-4">
+                                        <input class="form-check-input me-4" type="checkbox" value="" id="checkbox" />
+                                        <label class="form-check-label" for="checkbox">
+                                            @localizer["I agree all statements in"] <a href="#!"> @localizer["Terms of service"] </a>
+                                        </label>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center mx-4 mb-4 mb-lg-6">
+                                        <button asp-action="Register" asp-controller="Account" type="submit" class="btn btn-primary p-3 w-50 fs-1"> @localizer["Register"] </button>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center mx-4 mb-4 mb-lg-6">
+                                        <a asp-action="Login" asp-controller="Account" class="btn btn-info p-3 w-50 fs-1"> @localizer["Login"] </a>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                                <img src="~/images/dermatology_sub.jpg" class="img-fluid" alt="Sample image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

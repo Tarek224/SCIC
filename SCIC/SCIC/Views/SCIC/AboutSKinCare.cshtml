@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = @ViewData["Title"];
+}
+
+<div style="font-size:18px; margin-right:1.15rem; padding-right:0.45rem; padding-left:1.45rem;">
+    <h2></h2>
+    <ul class="nav nav-tabs">
+        <li>
+            <a asp-action="MainPage" asp-controller="SCIC" class="nav-link" aria-selected="true"> @localizer["Main Page"] </a>
+        </li>
+
+        <li>
+            <a asp-action="AboutSKinCare" asp-controller="SCIC" class="nav-link active"> @localizer["About Skin Cancer"] </a>
+        </li>
+
+        <li>
+            <a asp-action="Contact" asp-controller="Home" class="nav-link" aria-selected="true"> @localizer["Contact Us"] </a>
+        </li>
+
+    </ul>
+    <br />
+</div>
+<br />
+
+<!-- Title page -->
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('/images/hand-with-glove-holding-magnifying-glass.jpg');">
+    <h2 class="ltext-105 cl0 txt-center">
+        @localizer["About Skin Cancer"]
+    </h2>
+</section>
+
+
+
+<!-- Content page -->
+<section class="bg0 p-t-104 p-b-116">
+    <div class="container">
+        <div class="flex-w flex-t bor12 p-b-13">
+            <div class=" flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
+                <div class="flex-w w-full p-b-42">
+                    <span class="fs-18 cl5 txt-center size-211">
+                        <span class="lnr lnr-book"></span>
+                    </span>
+                    <div class="size-212 p-t-2">
+                        <span class="mtext-110 cl2">
+                            @localizer["What should I know about Skin Cancer?"]
+                        </span>
+                        <br /> <br />
+                        <ul>
+                            <li class="mtext-110 cl2">
+                                <span class="fs-18 cl5 txt-center size-211">
+                                    <span class="lnr lnr-menu-circle"></span>
+                                </span>
+                                @localizer["Australia has the highest incidence of skin cancer in the world"]
+                            </li>
+                            <br />
+                            <li class="mtext-110 cl2">
+                                <span class="fs-18 cl5 txt-center size-211">
+                                    <span class="lnr lnr-menu-circle"></span>
+                                </span>
+                                @localizer["Skin cancers account for around 80% of all newly diagnosed cancers"]
+                            </li>
+                            <br />
+                            <li class="mtext-110 cl2">
+                                <span class="fs-18 cl5 txt-center size-211">
+                                    <span class="lnr lnr-menu-circle"></span>
+                                </span>
+                                @localizer["Between 95 and 99% of skin cancers are caused by exposure to the sun"]
+                            </li>
+                            <br />
+                            <li class="mtext-110 cl2">
+                                <span class="fs-18 cl5 txt-center size-211">
+                                    <span class="lnr lnr-menu-circle"></span>
+                                </span>
+                                @localizer["Melanoma is the third most common life threatening cancer in both men and women overall"]
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

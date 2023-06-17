@@ -1,0 +1,944 @@
+section {
+
+  position: relative;
+
+}
+
+ 
+
+.svg-border-angled {
+
+  padding-top: 3rem;
+
+}
+
+.svg-border-angled svg {
+
+  position: absolute;
+
+  bottom: 0;
+
+  left: 0;
+
+  height: 3rem;
+
+  width: 100%;
+
+}
+
+@media (min-width: 576px) {
+
+  .svg-border-angled {
+
+    padding-top: 3.5rem;
+
+  }
+
+  .svg-border-angled svg {
+
+   height: 3.5rem;
+
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .svg-border-angled {
+
+    padding-top: 4rem;
+
+  }
+
+  .svg-border-angled svg {
+
+    height: 4rem;
+
+  }
+
+}
+
+@media (min-width: 992px) {
+
+  .svg-border-angled {
+
+    padding-top: 4.5rem;
+
+  }
+
+  .svg-border-angled svg {
+
+    height: 4.5rem;
+
+  }
+
+}
+
+@media (min-width: 1200px) {
+
+  .svg-border-angled {
+
+    padding-top: 5rem;
+
+  }
+
+  .svg-border-angled svg {
+
+    height: 5rem;
+
+  }
+
+}
+
+ 
+
+.svg-border-rounded svg {
+
+  position: absolute;
+
+  bottom: 0;
+
+  left: 0;
+
+  height: 1rem;
+
+  width: 100%;
+
+}
+
+@media (min-width: 576px) {
+
+  .svg-border-rounded svg {
+
+    height: 1.5rem;
+
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .svg-border-rounded svg {
+
+    height: 2rem;
+
+  }
+
+}
+
+@media (min-width: 992px) {
+
+  .svg-border-rounded svg {
+
+    height: 2.5rem;
+
+  }
+
+}
+
+@media (min-width: 1200px) {
+
+  .svg-border-rounded svg {
+
+    height: 3rem;
+
+  }
+
+}
+
+ 
+
+.svg-border-waves {
+
+  padding-top: 1rem;
+
+}
+
+.svg-border-waves svg {
+
+  position: absolute;
+
+  bottom: 0;
+
+  left: 0;
+
+  height: 2rem;
+
+  width: 100%;
+
+}
+
+@media (min-width: 576px) {
+
+  .svg-border-waves {
+
+    padding-top: 1.5rem;
+
+  }
+
+  .svg-border-waves svg {
+
+    height: 2.5rem;
+
+  }
+
+}
+
+@media (min-width: 1200px) {
+
+  .svg-border-waves {
+
+    padding-top: 2rem;
+
+  }
+
+  .svg-border-waves svg {
+
+    height: 3rem;
+
+  }
+
+}
+
+ 
+
+.brands svg {
+
+  width: 100%;
+
+  fill: currentColor;
+
+}
+
+ 
+
+.card-team {
+
+  overflow: visible;
+
+  margin-top: 3rem;
+
+}
+
+.card-team .card-body {
+
+  display: flex;
+
+  align-items: center;
+
+  flex-direction: column;
+
+  padding: 1.5rem;
+
+  text-align: center;
+
+}
+
+.card-team .card-body .card-team-img {
+
+  height: 10rem;
+
+  width: 10rem;
+
+  border-radius: 100%;
+
+  margin-top: -4.5rem;
+
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(33, 40, 50, 0.2);
+
+}
+
+.card-team .card-body .card-team-name {
+
+  font-weight: 500;
+
+  font-size: 1.1rem;
+
+}
+
+.card-team .card-body .card-team-position {
+
+  font-style: italic;
+
+  color: #a7aeb8;
+
+  font-size: 0.8rem;
+
+}
+
+ 
+
+.device-laptop {
+
+  position: relative;
+
+}
+
+.device-laptop .device-container {
+
+  display: block;
+
+  height: auto;
+
+  width: 100%;
+
+  position: relative;
+
+ z-index: 1;
+
+}
+
+.device-laptop .device-screenshot {
+
+  display: block;
+
+  position: absolute;
+
+  top: 6%;
+
+  left: 11.8%;
+
+  height: auto;
+
+  width: 76.57%;
+
+  z-index: 0;
+
+}
+
+ 
+
+/*!
+
+* html5-device-mockups (https://github.com/pixelsign/html5-device-mockups)
+
+* Copyright 2013 - 2018 pixelsign
+
+* Licensed under MIT (https://github.com/pixelsign/html5-device-mockups/blob/master/LICENSE.txt)
+
+* Last Build: Thu Dec 20 2018 14:05:50
+
+*/
+
+.device-wrapper {
+
+  max-width: 300px;
+
+  width: 100%;
+
+}
+
+ 
+
+.device {
+
+  position: relative;
+
+  background-size: cover;
+
+}
+
+ 
+
+.device::after {
+
+  position: absolute;
+
+  background-size: cover;
+
+  width: 100%;
+
+  height: 100%;
+
+  pointer-events: none;
+
+}
+
+ 
+
+.device .screen {
+
+  position: absolute;
+
+  background-size: cover;
+
+  pointer-events: auto;
+
+}
+
+ 
+
+.device .button {
+
+  position: absolute;
+
+  cursor: pointer;
+
+}
+
+ 
+
+.device[data-device=iPhoneX][data-orientation=portrait][data-color=black] {
+
+  padding-bottom: 198.89807163%;
+
+  background-image: url("/assets/img/device-mockups/iPhoneX/portrait.png");
+
+  z-index: initial;
+
+}
+
+ 
+
+.device[data-device=iPhoneX][data-orientation=portrait][data-color=black] .screen {
+
+  top: 3.254847645%;
+
+  left: 7.162534435%;
+
+  width: 85.67493113%;
+
+  height: 93.49030471%;
+
+  border: 0px;
+
+  z-index: 0;
+
+}
+
+ 
+
+.device[data-device=iPhoneX][data-orientation=landscape][data-color=black] {
+
+  padding-bottom: 50.27700831%;
+
+  background-image: url("/assets/img/device-mockups/iPhoneX/landscape.png");
+
+  z-index: initial;
+
+}
+
+ 
+
+.device[data-device=iPhoneX][data-orientation=landscape][data-color=black] .screen {
+
+  top: 7.162534435%;
+
+  left: 3.254847645%;
+
+  width: 93.49030471%;
+
+  height: 85.67493113%;
+
+  border: 0px;
+
+  z-index: 0;
+
+}
+
+ 
+
+.device[data-device=iPhoneX][data-orientation=portrait][data-color=black] {
+
+  padding-bottom: 198.898071625%;
+
+}
+
+ 
+
+.device[data-device=iPhoneX][data-orientation=portrait][data-color=black] .screen {
+
+  top: 3.1855955679%;
+
+  left: 6.8870523416%;
+
+  width: 86.2258953168%;
+
+  height: 93.6288088643%;
+
+}
+
+ 
+
+.device[data-device=iPhoneX][data-orientation=portrait][data-color=black]::after {
+
+  content: "";
+
+  background-image: url("/assets/img/device-mockups/iPhoneX/portrait_black.png");
+
+}
+
+ 
+
+.device[data-device=iPhoneX][data-orientation=portrait][data-color=black] .button {
+
+  display: none;
+
+  top: 0%;
+
+  left: 0%;
+
+  width: 100%;
+
+  height: 100%;
+
+}
+
+ 
+
+.device[data-device=iPhoneX][data-orientation=landscape][data-color=black] {
+
+  padding-bottom: 50.2770083102%;
+
+}
+
+ 
+
+.device[data-device=iPhoneX][data-orientation=landscape][data-color=black] .screen {
+
+  top: 6.3360881543%;
+
+  left: 3.4626038781%;
+
+  width: 93.0747922438%;
+
+  height: 87.3278236915%;
+
+}
+
+ 
+
+.device[data-device=iPhoneX][data-orientation=landscape][data-color=black]::after {
+
+  content: "";
+
+  background-image: url("/assets/img/device-mockups/iPhoneX/landscape_black.png");
+
+}
+
+ 
+
+.device[data-device=iPhoneX][data-orientation=landscape][data-color=black] .button {
+
+  display: none;
+
+  top: 0%;
+
+  left: 0%;
+
+  width: 100%;
+
+  height: 100%;
+
+}
+
+ 
+
+.footer {
+
+  font-size: 0.875rem;
+
+}
+
+.footer .footer-brand {
+
+  font-size: 1.2rem;
+
+  font-weight: bold;
+
+  margin-bottom: 0.25rem;
+
+}
+
+.footer .footer-brand svg {
+
+  height: 1rem;
+
+}
+
+.footer.footer-dark {
+
+  color: rgba(255, 255, 255, 0.6);
+
+}
+
+.footer.footer-dark hr {
+
+  border-color: rgba(255, 255, 255, 0.1);
+
+}
+
+.footer.footer-light {
+
+                background-color: #a7aeb8;
+
+ 
+
+}
+
+ 
+
+.page-header-ui {
+
+  position: relative;
+
+  padding-top: 8rem;
+
+  padding-bottom: 8rem;
+
+}
+
+.page-header-ui .page-header-ui-content .page-header-ui-title {
+
+  font-size: 2.5rem;
+
+}
+
+.page-header-ui .page-header-ui-content .page-header-ui-text {
+
+  font-size: 1.15rem;
+
+}
+
+.page-header-ui .page-header-ui-content .page-header-ui-text.small {
+
+  font-size: 0.9rem;
+
+}
+
+ 
+
+.page-header-ui-dark {
+
+                color: #fff;
+
+                background-color: #E2E2E2;
+
+}
+
+.page-header-ui-dark .page-header-ui-title {
+
+  color: #fff;
+
+}
+
+.page-header-ui-light {
+
+  background-color: #f2f6fc;
+
+}
+
+.page-header-ui-light .page-header-ui-text {
+
+  color: #69707a;
+
+}
+
+.page-header-ui-light .page-header-ui-text a {
+
+  color: #4a515b;
+
+}
+
+.page-header-ui.navbar-fixed .page-header-ui-content {
+
+  padding-top: 12.5rem;
+
+}
+
+.pricing {
+
+  font-size: 0.9rem;
+
+  border: none;
+
+}
+
+.pricing .pricing-price {
+
+  font-size: 3rem;
+
+  color: #363d47;
+
+  margin-bottom: 1rem;
+
+}
+
+.pricing .pricing-price sup {
+
+  font-size: 1.5rem;
+
+}
+
+.pricing .pricing-price .pricing-price-period {
+
+  font-size: 1.25rem;
+
+}
+
+.pricing .pricing-list {
+
+  margin-bottom: 0;
+
+  margin-left: 1.6em;
+
+}
+
+.pricing .pricing-list .pricing-list-item {
+
+  margin-bottom: 0.5rem;
+
+}
+
+ 
+
+@media (min-width: 992px) {
+
+  .pricing-left {
+
+    border-top-right-radius: 0;
+
+    border-bottom-right-radius: 0;
+
+  }
+
+ 
+
+  .pricing-right {
+
+    border-top-left-radius: 0;
+
+    border-bottom-left-radius: 0;
+
+  }
+
+}
+
+.testimonial .testimonial-brand {
+
+  fill: currentColor;
+
+  margin-bottom: 1.35rem;
+
+}
+
+.testimonial .testimonial-brand svg {
+
+  height: 3rem;
+
+}
+
+.testimonial .testimonial-quote {
+
+  font-size: 1.4rem;
+
+  font-weight: 300;
+
+}
+
+.testimonial .testimonial-name {
+
+  font-weight: bold;
+
+}
+
+.testimonial .testimonial-position {
+
+  font-weight: lighter;
+
+}
+
+ 
+
+@media (min-width: 992px) {
+
+  .divider-right {
+
+    border-right: 0.0625rem solid #e0e5ec;
+
+  }
+
+}
+
+.wrappers {
+	width: 100%;
+	height: 200px;
+	border: 1px solid black;
+	border-top: none;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+	background-color: #333;
+}
+
+.wrappers:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 80%;
+  border: 1px solid black;
+  left: 0;
+  top: -50%;
+  z-index: 2;
+}
+
+.co {
+    background-color: #ffff;
+    color: #ffff;
+}
+.pickfo {
+	
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-align: center;
+	
+	
+	
+	}
+	
+.pickfo2 {
+	
+	background-image: url(img/FatFooter-En.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	
+	height: 200px;
+	background-color: #00c2f3;
+	
+	
+	}
+
+.logoleft {
+	text-align: left;
+	float: left;
+	width: 40%;
+	margin: 0px;
+	padding: 0px;
+}
+.logoright {
+	text-align: right;
+	float: right;
+	width: 40%;
+	margin: 0px;
+	padding: 0px;
+	clear: right;
+}
+:root {
+            --input-padding-x: 1.5rem;
+            --input-padding-y: .75rem;
+        }
+
+        .ck {
+
+
+        }
+
+        .card-signin {
+            border: 0;
+            border-radius: 0.65rem;
+            box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+            .card-signin .card-title {
+	margin-bottom: 2rem;
+	font-weight: 300;
+	font-size: 16px;
+            }
+
+            .card-signin .card-img-left {
+                width: 45%;
+                /* Link to your background image using in the property below! */
+                background: scroll center url(../Images/undraw_Hiring_re_yk5n.svg);
+                background-size: cover;
+            }
+
+            .card-signin .card-body {
+                padding: 2rem;
+            }
+
+        .form-signin {
+            width: 100%;
+        }
+
+            .form-signin .btn {
+                font-size: 80%;
+                border-radius:  0.65rem;
+                letter-spacing: .1rem;
+                font-weight: bold;
+                padding: 1rem;
+                transition: all 0.2s;
+            }
+
+        .form-label-group {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+            .form-label-group input {
+                height: auto;
+                border-radius: 0.65rem;
+            }
+
+            .form-label-group > input,
+            .form-label-group > label {
+                padding: var(--input-padding-y) var(--input-padding-x);
+            }
+
+            .form-label-group > label {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                margin-bottom: 0;
+                /* Override default `<label>` margin */
+                line-height: 1.5;
+                color: #495057;
+                border: 1px solid transparent;
+                border-radius: 0.65rem;
+                transition: all .1s ease-in-out;
+            }
+
+            .form-label-group input::-webkit-input-placeholder {
+                color: transparent;
+            }
+
+            .form-label-group input:-ms-input-placeholder {
+                color: transparent;
+            }
+
+            .form-label-group input::-ms-input-placeholder {
+                color: transparent;
+            }
+
+            .form-label-group input::-moz-placeholder {
+                color: transparent;
+            }
+
+            .form-label-group input::placeholder {
+                color: transparent;
+            }
+
+            .form-label-group input:not(:placeholder-shown) {
+                padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+                padding-bottom: calc(var(--input-padding-y) / 3);
+            }
+
+                .form-label-group input:not(:placeholder-shown) ~ label {
+                    padding-top: calc(var(--input-padding-y) / 3);
+                    padding-bottom: calc(var(--input-padding-y) / 3);
+                    font-size: 12px;
+                    color: #777;
+                }
+
+        .btn-google {
+            color: white;
+            background-color: #ea4335;
+        }
+
+        .btn-facebook {
+            color: white;
+            background-color: #3b5998;
+        }
